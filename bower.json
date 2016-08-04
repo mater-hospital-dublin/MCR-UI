@@ -1,6 +1,6 @@
 {
-  "name": "openehr-poc",
-  "version": "0.0.0",
+  "name": "ripple-ui",
+  "version": "0.7.0.0",
   "dependencies": {
     "json3": "~3.3.1",
     "es5-shim": "~3.1.0",
