@@ -6,3 +6,6 @@ bower_components
 **/tenant/*.js
 **/themes/theme.scss
 **/styles/main.*
+
+.idea
+*.iml
