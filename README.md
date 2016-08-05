@@ -1,12 +1,15 @@
-Ripple IDCR Demonstrator
+Ripple IDCR UI
 =========
 
+This repository contains the code base for the Ripple Angular UI, which is a separate package that sits on top of
+ the Ripple Java Middleware (Org-Ripple-Core).
+ 
 
 ### Requirements
 
 To develop and run the application locally you must have the following installed:
 * NodeJS
-* A running version of Org-Ripple-Core
+* A running version of The Ripple Middleware listening on port 19191
 
 
 ### Installation
