@@ -16,7 +16,7 @@
 
 'use strict';
 
-angular.module('rippleDemonstrator')
+angular.module('ripple-ui')
   .factory('Image', function ($http) {
 
     var allStudies = function (patientId) {

@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('rippleDemonstrator')
+angular.module('ripple-ui')
   .controller('headerController', function ($scope, $rootScope, $window, $state, usSpinnerService, $stateParams, UserService, AdvancedSearch) {
 
     $rootScope.searchExpression = '';
@@ -323,24 +323,24 @@ angular.module('rippleDemonstrator')
       $scope.searchExpression = expression;
       $scope.searchFocused = true;
     });
-    
+
     // Mobile Nav (New)
     $scope.currentNavTab = ''; // search, notifications or user
-    
+
     $scope.changeNavTab = function(newTab){
-      
+
       // Is tab already expanded?
       if( $scope.currentNavTab == newTab ){
         $scope.currentNavTab = '';
       } else {
-        $scope.currentNavTab = newTab;       
+        $scope.currentNavTab = newTab;
       }
     }
-    
+
     $scope.activeNavTab = function(thisTab){
       if( thisTab == $scope.currentNavTab ){
         return 'active';
       }
     }
-    
+
   });

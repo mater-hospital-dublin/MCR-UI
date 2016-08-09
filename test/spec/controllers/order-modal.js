@@ -3,7 +3,7 @@
 //describe('OrdersModalCtrl', function () {
 //
 //  // load the controller's module
-//  beforeEach(module('rippleDemonstrator'));
+//  beforeEach(module('ripple-ui'));
 //
 //  var OrdersModalCtrl, scope, modalInstance, $order;
 //

@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('rippleDemonstrator')
+angular.module('ripple-ui')
   .controller('ReportChartsCtrl', function ($scope, $rootScope, $window, $modal, $state, $stateParams, Report) {
 
     $rootScope.searchMode = true;

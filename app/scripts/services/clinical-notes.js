@@ -15,7 +15,7 @@
  */
 'use strict';
 
-angular.module('rippleDemonstrator')
+angular.module('ripple-ui')
   .factory('ClinicalNotes', function ($http) {
 
     var all = function (patientId) {

@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('rippleDemonstrator')
+angular.module('ripple-ui')
   .controller('PatientsChartsCtrl', function ($scope, $window, $state, PatientService, $modal) {
 
     $scope.openModal = function (row, chartType) {

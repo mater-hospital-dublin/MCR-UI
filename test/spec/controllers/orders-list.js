@@ -3,7 +3,7 @@
 describe('OrdersListCtrl', function () {
 
   // load the controller's module
-  beforeEach(module('rippleDemonstrator'));
+  beforeEach(module('ripple-ui'));
 
   var OrdersListCtrl, scope, $location, $stateParams, $state, PatientService, Contact, $modal;
   var fakeModal = {

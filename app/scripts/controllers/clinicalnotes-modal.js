@@ -15,7 +15,7 @@
  */
 'use strict';
 
-angular.module('rippleDemonstrator')
+angular.module('ripple-ui')
   .controller('ClinicalNotesModalCtrl', function ($scope, $modalInstance, UserService, clinicalNote, patient, modal) {
 
     $scope.currentUser = UserService.findCurrentUser();

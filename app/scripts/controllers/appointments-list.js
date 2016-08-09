@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('rippleDemonstrator')
+angular.module('ripple-ui')
   .controller('AppointmentsListCtrl', function ($scope, $location, $stateParams, SearchInput, $modal, $state, PatientService, usSpinnerService, Appointment) {
 
     $scope.currentPage = 1;

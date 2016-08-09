@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('rippleDemonstrator')
+angular.module('ripple-ui')
   .factory('Allergy', function ($http) {
 
     var all = function (patientId) {

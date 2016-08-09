@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('rippleDemonstrator')
+angular.module('ripple-ui')
   .controller('ReferralsModalCtrl', function ($scope, $modalInstance, UserService, referral, patient, modal) {
 
     $('#dateofreferral').datepicker({ dateFormat: 'dd-MMM-y' });

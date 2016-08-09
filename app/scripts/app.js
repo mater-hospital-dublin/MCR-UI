@@ -1,7 +1,7 @@
 'use strict';
 
 angular
-  .module('rippleDemonstrator', [
+  .module('ripple-ui', [
     'ngResource',
     'ngTouch',
     'ngAnimate',

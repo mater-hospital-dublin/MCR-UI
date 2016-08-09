@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('rippleDemonstrator')
+angular.module('ripple-ui')
   .controller('OrdersModalCtrl', function ($scope, $modalInstance, Order, UserService, order, patient, modal) {
 
     UserService.findCurrentUser().then( function (result) {
