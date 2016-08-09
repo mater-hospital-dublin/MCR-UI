@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('rippleDemonstrator')
+angular.module('ripple-ui')
   .controller('PatientsDetailCtrl', function ($scope, $stateParams, $state, SearchInput, PatientService) {
 
     SearchInput.update();
@@ -61,8 +61,14 @@ angular.module('rippleDemonstrator')
       case 'images':
         toState = 'images';
         break;
+      case 'clinicalNotes':
+        toState = 'clinicalNotes';
+        break;
+      case 'heightAndWeights':
+        toState = 'heightAndWeights';
+        break;
       }
+
       $state.go(toState, requestHeader);
     };
-
   });

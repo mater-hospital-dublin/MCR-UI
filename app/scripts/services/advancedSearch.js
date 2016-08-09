@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('rippleDemonstrator')
+angular.module('ripple-ui')
   .factory('AdvancedSearch', function($modal, $http) {
 
     var isModalClosed = true;

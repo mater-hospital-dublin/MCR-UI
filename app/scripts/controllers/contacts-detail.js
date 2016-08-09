@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('rippleDemonstrator')
+angular.module('ripple-ui')
   .controller('ContactsDetailCtrl', function ($scope, $stateParams, $modal, $location, SearchInput, $state, Helper, PatientService, usSpinnerService, Contact) {
 
     SearchInput.update();

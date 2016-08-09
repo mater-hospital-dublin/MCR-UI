@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('rippleDemonstrator')
+angular.module('ripple-ui')
   .controller('MainSearchController', function($scope, AdvancedSearch) {
     $scope.mainSearchEnabled = true;
     $scope.searchExpression = '';

@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('rippleDemonstrator')
+angular.module('ripple-ui')
   .factory('Result', function ($http) {
 
     var get = function (patientId, compositionId, source) {

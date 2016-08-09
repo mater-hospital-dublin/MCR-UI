@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('rippleDemonstrator')
+angular.module('ripple-ui')
   .value("content", {
     "idcr_title": "HSCIE Care Record",
     "phr_title": "HSCIE Ripple",

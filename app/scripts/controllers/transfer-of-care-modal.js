@@ -1,7 +1,7 @@
 'use strict';
 
 /*jshint loopfunc: true*/
-angular.module('rippleDemonstrator')
+angular.module('ripple-ui')
   .controller('TransferOfCareCtrl', function ($modal, $state, $scope, $q, $stateParams, PatientService, TransferOfCare, Allergy, Diagnosis, Medication, Contact) {
 
     $modal.open({

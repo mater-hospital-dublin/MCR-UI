@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('rippleDemonstrator')
+angular.module('ripple-ui')
   .controller('AppointmentsConfirmModalCtrl', function ($scope, $modalInstance, time) {
 
     $scope.modal = $modalInstance;
