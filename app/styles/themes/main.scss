@@ -834,7 +834,7 @@ legend {
     width: 20%;
     display: block;
     margin: 0 auto 5% auto;
-    content: url("../images/search-ripple-logo.png");
+    content: url("../../images/search-ripple-logo.png");
   }
 
   .main-search-inner {
@@ -2657,4 +2657,8 @@ div#age-chart div.morris-hover.morris-default-style {
 
 .clinicalNoteForm textarea {
   height: 120px;
+}
+
+.import-record {
+  cursor: pointer;
 }
