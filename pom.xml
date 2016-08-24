@@ -119,6 +119,7 @@
                             <descriptors>
                                 <descriptor>assembly/build.xml</descriptor>
                             </descriptors>
+                            <archiveBaseDirectory>${session.executionRootDirectory}</archiveBaseDirectory>
                         </configuration>
                     </execution>
                 </executions>

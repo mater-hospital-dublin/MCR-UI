@@ -11,7 +11,7 @@
     <fileSets>
         <fileSet>
             <outputDirectory></outputDirectory>
-            <directory>${session.executionRootDirectory}/dist</directory>
+            <directory>dist</directory>
         </fileSet>
     </fileSets>
 </assembly>
