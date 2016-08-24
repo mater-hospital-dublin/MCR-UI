@@ -13,6 +13,7 @@ const connection = mysql.createConnection({
   password: 'answer99q',
   database: 'poc_legacy'
 });
+let timezone = null;
 
 connection.connect(function (err) {
   if (err) {
@@ -44,6 +45,21 @@ connection.connect(function (err) {
       errorHandler(err);
       return;
     }
+  });
+  /**
+   * Get timezone
+   */
+  connection.query('SELECT TIMEDIFF(NOW(), UTC_TIMESTAMP) as timezone', function (err, data) {
+    if (err) {
+      errorHandler(err);
+      return;
+    }
+    console.log(data[0].timezone);
+    timezone = data[0].timezone;
+    if (timezone[0] !== '-') {
+      timezone = '+' + timezone;
+    }
+    timezone = timezone.slice(0, 6);
   });
 });
 
@@ -139,8 +155,7 @@ connection.getMessages = function (appointmentId, isDesc, cb) {
   if (cb === undefined) {
     cb = function () {};
   }
-  // connection.query(`SELECT appointment_id, author, message, UNIX_TIMESTAMP(created_at) * 1000 as 'timestamp' FROM appointment_history_chat WHERE (appointment_id = ${connection.escape(appointmentId)}) ORDER BY created_at ${(isDesc) ? 'DESC' : 'ASC'};`, function (err, rows) {
-  connection.query(`SELECT appointment_id, author, message, UNIX_TIMESTAMP(CONVERT_TZ(created_at, '+03:00', @@session.time_zone)) * 1000 as 'timestamp' FROM appointment_history_chat WHERE (appointment_id = ${connection.escape(appointmentId)}) ORDER BY created_at ${(isDesc) ? 'DESC' : 'ASC'};`, function (err, rows) {
+  connection.query(`SELECT appointment_id, author, message, UNIX_TIMESTAMP(CONVERT_TZ(created_at, '${timezone}', @@session.time_zone)) * 1000 as 'timestamp' FROM appointment_history_chat WHERE (appointment_id = ${connection.escape(appointmentId)}) ORDER BY created_at ${(isDesc) ? 'DESC' : 'ASC'};`, function (err, rows) {
     if (err) {
       errorHandler(err);
       return cb(err, null);
