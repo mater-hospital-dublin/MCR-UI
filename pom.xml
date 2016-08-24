@@ -21,7 +21,7 @@
 
     <groupId>org.rippleosi</groupId>
     <artifactId>ripple-ui</artifactId>
-    <version>0.7.2.0-SNAPSHOT</version>
+    <version>0.7.3.0-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <name>Ripple UI</name>
@@ -118,7 +118,7 @@
                             <descriptors>
                                 <descriptor>assembly/build.xml</descriptor>
                             </descriptors>
-                            <archiveBaseDirectory>${session.executionRootDirectory}</archiveBaseDirectory>
+                            <archiveBaseDirectory>${basedir}</archiveBaseDirectory>
                         </configuration>
                     </execution>
                 </executions>
