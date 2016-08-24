@@ -85,6 +85,14 @@ module.exports = function (grunt) {
           port: 19191,
           https: false,
           xforward: false
+        },
+        {
+          context: '/socket.io',
+          host: 'localhost',
+          port: 8070,
+          https: false,
+          xforward: false,
+          ws: true
         }
       ],
       livereload: {
@@ -192,7 +200,7 @@ module.exports = function (grunt) {
       options: {
       },
       app: {
-        src: ['<%= yeoman.app %>/index.html'],
+        src: ['<%= yeoman.app %>/index.html', '<%= yeoman.app %>/appointment.html'],
         ignorePath:  /\.\.\//
       }
     },
@@ -202,6 +210,7 @@ module.exports = function (grunt) {
       dist: {
         src: [
           '<%= yeoman.dist %>/scripts/{,*/}*.js',
+          '!<%= yeoman.dist %>/scripts/chat/sw.js',
           '<%= yeoman.dist %>/styles/{,*/}*.css',
           '<%= yeoman.dist %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}',
           '<%= yeoman.dist %>/styles/fonts/*'
@@ -213,19 +222,36 @@ module.exports = function (grunt) {
     // concat, minify and revision files. Creates configurations in memory so
     // additional tasks can operate on them
     useminPrepare: {
-      html: '<%= yeoman.app %>/index.html',
-      options: {
-        dest: '<%= yeoman.dist %>',
-        flow: {
-          html: {
-            steps: {
-              js: ['concat', 'uglifyjs'],
-              css: ['cssmin']
-            },
-            post: {}
+      index: {
+        src: ['<%= yeoman.app %>/index.html'],
+        options: {
+          dest: '<%= yeoman.dist %>',
+          flow: {
+            html: {
+              steps: {
+                js: ['concat', 'uglifyjs'],
+                css: ['cssmin']
+              },
+              post: {}
+            }
           }
         }
-      }
+      },
+      appointment: {
+        src: ['<%= yeoman.app %>/appointment.html'],
+        options: {
+          dest: '<%= yeoman.dist %>',
+          flow: {
+            html: {
+              steps: {
+                js: ['concat', 'uglifyjs'],
+                css: ['cssmin']
+              },
+              post: {}
+            }
+          }
+        }
+      },
     },
 
     // Performs rewrites based on filerev and the useminPrepare configuration
@@ -340,7 +366,8 @@ module.exports = function (grunt) {
             'images/{,*/}*.{webp}',
             'fonts/*',
             'styles/{,*/}/*.{woff,eot,svg,ttf}',
-            'styles/**/svgs/*'
+            'styles/**/svgs/*',
+            'scripts/chat/sw.js',
           ]
         }, {
           expand: true,
