@@ -54,7 +54,6 @@ connection.connect(function (err) {
       errorHandler(err);
       return;
     }
-    console.log(data[0].timezone);
     timezone = data[0].timezone;
     if (timezone[0] !== '-') {
       timezone = '+' + timezone;
