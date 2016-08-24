@@ -1,7 +1,7 @@
 'use strict';
 
 angular
-  .module('rippleDemonstrator', [
+  .module('ripple-ui', [
     'ngResource',
     'ngTouch',
     'ngAnimate',
@@ -326,7 +326,64 @@ angular
           main: { templateUrl: 'views/dicom/image-list.html', controller: 'ImageListCtrl' },
           detail: { templateUrl: 'views/dicom/image-detail.html', controller: 'ImageDetailCtrl' }
         }
-      });
+      })
+
+        .state('clinicalNotes', {
+          url: '/patients/{patientId:int}/clinicalNotes?reportType&searchString&queryType',
+          views: {
+            'user-context': {templateUrl: 'views/patients/patients-context.html', controller: 'PatientsDetailCtrl'},
+            actions: {templateUrl: 'views/patients/patients-sidebar.html', controller: 'PatientsDetailCtrl'},
+            main: {templateUrl: 'views/clinical-notes/clinicalnotes-list.html', controller: 'ClinicalNotesListCtrl'}
+          }
+        })
+
+        .state('clinicalNotes-detail', {
+          url: '/patients/{patientId:int}/clinicalNotes/{clinicalNoteIndex}?filter&page&reportType&searchString&queryType&source',
+          views: {
+            'user-context': {templateUrl: 'views/patients/patients-context.html', controller: 'PatientsDetailCtrl'},
+            actions: {templateUrl: 'views/patients/patients-sidebar.html', controller: 'PatientsDetailCtrl'},
+            main: {templateUrl: 'views/clinical-notes/clinicalnotes-list.html', controller: 'ClinicalNotesListCtrl'},
+            detail: {templateUrl: 'views/clinical-notes/clinicalnotes-detail.html', controller: 'ClinicalNotesDetailCtrl'}
+          }
+        })
+
+        .state('heightAndWeights', {
+          url: '/patients/{patientId:int}/heightAndWeights?reportType&searchString&queryType',
+          views: {
+            'user-context': {templateUrl: 'views/patients/patients-context.html', controller: 'PatientsDetailCtrl'},
+            actions: {templateUrl: 'views/patients/patients-sidebar.html', controller: 'PatientsDetailCtrl'},
+            main: {templateUrl: 'views/height-and-weight/heightAndWeight-list.html', controller: 'HeightAndWeightsListCtrl'}
+          }
+        })
+
+        .state('heightAndWeights-detail', {
+          url: '/patients/{patientId:int}/heightAndWeights/{heightAndWeightIndex}?filter&page&reportType&searchString&queryType',
+          views: {
+            'user-context': {templateUrl: 'views/patients/patients-context.html', controller: 'PatientsDetailCtrl'},
+            actions: {templateUrl: 'views/patients/patients-sidebar.html', controller: 'PatientsDetailCtrl'},
+            main: {templateUrl: 'views/height-and-weight/heightAndWeight-list.html', controller: 'HeightAndWeightsListCtrl'},
+            detail: {templateUrl: 'views/height-and-weight/heightAndWeight-detail.html', controller: 'HeightAndWeightsDetailCtrl'}
+          }
+        })
+
+        .state('documents', {
+          url: '/patients/{patientId:int}/documents?reportType&searchString&queryType',
+          views: {
+            'user-context': {templateUrl: 'views/patients/patients-context.html', controller: 'PatientsDetailCtrl'},
+            actions: {templateUrl: 'views/patients/patients-sidebar.html', controller: 'PatientsDetailCtrl'},
+            main: {templateUrl: 'views/documents/documents-list.html', controller: 'DocumentsListCtrl'}
+          }
+        })
+
+        .state('documents-detail', {
+          url: '/patients/{patientId:int}/documents/{documentIndex}?filter&page&reportType&searchString&queryType&documentType&source',
+          views: {
+            'user-context': {templateUrl: 'views/patients/patients-context.html', controller: 'PatientsDetailCtrl'},
+            actions: {templateUrl: 'views/patients/patients-sidebar.html', controller: 'PatientsDetailCtrl'},
+            main: {templateUrl: 'views/documents/documents-list.html', controller: 'DocumentsListCtrl'},
+            detail: {templateUrl: 'views/documents/documents-detail.html', controller: 'DocumentsDetailCtrl'}
+          }
+        });
   })
 
   .directive('datepickerPopup', function () {
