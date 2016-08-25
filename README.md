@@ -45,7 +45,7 @@ grunt serve
 ```
 
 ### Running the Socket Server
-Requires Node.js version >= 6.0.0
+Requires Node.js version >= 6.0.0 and MySQL
 
 Mysql connection credentials are located in socket-server/lib/db.js
  
