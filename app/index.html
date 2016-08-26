@@ -443,7 +443,17 @@
     <!-- /.#page-wrapper -->
     <!-- /.#page-wrapper -->
 
-  <div class="notifications" growl-notifications></div>
+
+  <growl-notifications>
+    <div ng-repeat="(id, notification) in notifications track by id">
+      <growl-notification>
+        {{notification}}
+      </growl-notification>
+    </div>
+  </growl-notifications>
+
+  <!--<div class="notifications" growl-notifications></div>-->
+  <div id="notificationSound"></div>
 
   <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
   <script>

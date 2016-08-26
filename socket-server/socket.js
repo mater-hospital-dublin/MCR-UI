@@ -69,7 +69,12 @@ io.on('connection', function (socket) {
      * Emit notification to opponents
      */
     socket.on('appointment:init', (data) => {
-        if (!socketsList[socket.id] || socketsList[socket.id].user.isPatient()) return;
+        if (!socketsList[socket.id] || !socketsList[socket.id].user) {
+            console.log('user:error', 'event: appointment:init', socket.id);
+            socket.emit('user:error', {message: 'Please, refresh the page', event: 'appointment:init'});
+            return;
+        }
+        if (socketsList[socket.id].user.isPatient()) return;
         console.log('appointment:init', socket.id, data.appointmentId);
         const doctor = socketsList[socket.id].user;
         const nhsNumber = data.patientId;

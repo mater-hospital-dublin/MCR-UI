@@ -6,6 +6,7 @@ angular.module('ripple-ui')
     $rootScope.searchExpression = '';
     $scope.searchExpression = $rootScope.searchExpression;
     $scope.reportTypes = [];
+    $scope.notifications = [];
 
     $scope.searchFocused = false;
 
@@ -29,6 +30,12 @@ angular.module('ripple-ui')
           role: $scope.currentUser.role,
           surname: $scope.currentUser.familyName,
           name: $scope.currentUser.givenName
+        });
+
+
+        socket.on('user:error', function (data) {
+          console.log('user:error', data);
+          $scope.notifications.push(data.message)
         });
 
         socket.on('appointment:init', function (data) {
