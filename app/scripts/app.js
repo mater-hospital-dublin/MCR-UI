@@ -328,62 +328,62 @@ angular
         }
       })
 
-      .state('clinicalNotes', {
-        url: '/patients/{patientId:int}/clinicalNotes?reportType&searchString&queryType',
-        views: {
-          'user-context': {templateUrl: 'views/patients/patients-context.html', controller: 'PatientsDetailCtrl'},
-          actions: {templateUrl: 'views/patients/patients-sidebar.html', controller: 'PatientsDetailCtrl'},
-          main: {templateUrl: 'views/clinical-notes/clinicalnotes-list.html', controller: 'ClinicalNotesListCtrl'}
-        }
-      })
+        .state('clinicalNotes', {
+          url: '/patients/{patientId:int}/clinicalNotes?reportType&searchString&queryType',
+          views: {
+            'user-context': {templateUrl: 'views/patients/patients-context.html', controller: 'PatientsDetailCtrl'},
+            actions: {templateUrl: 'views/patients/patients-sidebar.html', controller: 'PatientsDetailCtrl'},
+            main: {templateUrl: 'views/clinical-notes/clinicalnotes-list.html', controller: 'ClinicalNotesListCtrl'}
+          }
+        })
 
-      .state('clinicalNotes-detail', {
-        url: '/patients/{patientId:int}/clinicalNotes/{clinicalNoteIndex}?filter&page&reportType&searchString&queryType&source',
-        views: {
-          'user-context': {templateUrl: 'views/patients/patients-context.html', controller: 'PatientsDetailCtrl'},
-          actions: {templateUrl: 'views/patients/patients-sidebar.html', controller: 'PatientsDetailCtrl'},
-          main: {templateUrl: 'views/clinical-notes/clinicalnotes-list.html', controller: 'ClinicalNotesListCtrl'},
-          detail: {templateUrl: 'views/clinical-notes/clinicalnotes-detail.html', controller: 'ClinicalNotesDetailCtrl'}
-        }
-      })
+        .state('clinicalNotes-detail', {
+          url: '/patients/{patientId:int}/clinicalNotes/{clinicalNoteIndex}?filter&page&reportType&searchString&queryType&source',
+          views: {
+            'user-context': {templateUrl: 'views/patients/patients-context.html', controller: 'PatientsDetailCtrl'},
+            actions: {templateUrl: 'views/patients/patients-sidebar.html', controller: 'PatientsDetailCtrl'},
+            main: {templateUrl: 'views/clinical-notes/clinicalnotes-list.html', controller: 'ClinicalNotesListCtrl'},
+            detail: {templateUrl: 'views/clinical-notes/clinicalnotes-detail.html', controller: 'ClinicalNotesDetailCtrl'}
+          }
+        })
 
-      .state('heightAndWeights', {
-        url: '/patients/{patientId:int}/heightAndWeights?reportType&searchString&queryType',
-        views: {
-          'user-context': {templateUrl: 'views/patients/patients-context.html', controller: 'PatientsDetailCtrl'},
-          actions: {templateUrl: 'views/patients/patients-sidebar.html', controller: 'PatientsDetailCtrl'},
-          main: {templateUrl: 'views/height-and-weight/heightAndWeight-list.html', controller: 'HeightAndWeightsListCtrl'}
-        }
-      })
+        .state('heightAndWeights', {
+          url: '/patients/{patientId:int}/heightAndWeights?reportType&searchString&queryType',
+          views: {
+            'user-context': {templateUrl: 'views/patients/patients-context.html', controller: 'PatientsDetailCtrl'},
+            actions: {templateUrl: 'views/patients/patients-sidebar.html', controller: 'PatientsDetailCtrl'},
+            main: {templateUrl: 'views/height-and-weight/heightAndWeight-list.html', controller: 'HeightAndWeightsListCtrl'}
+          }
+        })
 
-      .state('heightAndWeights-detail', {
-        url: '/patients/{patientId:int}/heightAndWeights/{heightAndWeightIndex}?filter&page&reportType&searchString&queryType',
-        views: {
-          'user-context': {templateUrl: 'views/patients/patients-context.html', controller: 'PatientsDetailCtrl'},
-          actions: {templateUrl: 'views/patients/patients-sidebar.html', controller: 'PatientsDetailCtrl'},
-          main: {templateUrl: 'views/height-and-weight/heightAndWeight-list.html', controller: 'HeightAndWeightsListCtrl'},
-          detail: {templateUrl: 'views/height-and-weight/heightAndWeight-detail.html', controller: 'HeightAndWeightsDetailCtrl'}
-        }
-      })
+        .state('heightAndWeights-detail', {
+          url: '/patients/{patientId:int}/heightAndWeights/{heightAndWeightIndex}?filter&page&reportType&searchString&queryType',
+          views: {
+            'user-context': {templateUrl: 'views/patients/patients-context.html', controller: 'PatientsDetailCtrl'},
+            actions: {templateUrl: 'views/patients/patients-sidebar.html', controller: 'PatientsDetailCtrl'},
+            main: {templateUrl: 'views/height-and-weight/heightAndWeight-list.html', controller: 'HeightAndWeightsListCtrl'},
+            detail: {templateUrl: 'views/height-and-weight/heightAndWeight-detail.html', controller: 'HeightAndWeightsDetailCtrl'}
+          }
+        })
 
-      .state('documents', {
-        url: '/patients/{patientId:int}/documents?reportType&searchString&queryType',
-        views: {
-          'user-context': {templateUrl: 'views/patients/patients-context.html', controller: 'PatientsDetailCtrl'},
-          actions: {templateUrl: 'views/patients/patients-sidebar.html', controller: 'PatientsDetailCtrl'},
-          main: {templateUrl: 'views/documents/documents-list.html', controller: 'DocumentsListCtrl'}
-        }
-      })
+        .state('documents', {
+          url: '/patients/{patientId:int}/documents?reportType&searchString&queryType',
+          views: {
+            'user-context': {templateUrl: 'views/patients/patients-context.html', controller: 'PatientsDetailCtrl'},
+            actions: {templateUrl: 'views/patients/patients-sidebar.html', controller: 'PatientsDetailCtrl'},
+            main: {templateUrl: 'views/documents/documents-list.html', controller: 'DocumentsListCtrl'}
+          }
+        })
 
-      .state('documents-detail', {
-        url: '/patients/{patientId:int}/documents/{documentIndex}?filter&page&reportType&searchString&queryType&documentType&source',
-        views: {
-          'user-context': {templateUrl: 'views/patients/patients-context.html', controller: 'PatientsDetailCtrl'},
-          actions: {templateUrl: 'views/patients/patients-sidebar.html', controller: 'PatientsDetailCtrl'},
-          main: {templateUrl: 'views/documents/documents-list.html', controller: 'DocumentsListCtrl'},
-          detail: {templateUrl: 'views/documents/documents-detail.html', controller: 'DocumentsDetailCtrl'}
-        }
-      });
+        .state('documents-detail', {
+          url: '/patients/{patientId:int}/documents/{documentIndex}?filter&page&reportType&searchString&queryType&documentType&source',
+          views: {
+            'user-context': {templateUrl: 'views/patients/patients-context.html', controller: 'PatientsDetailCtrl'},
+            actions: {templateUrl: 'views/patients/patients-sidebar.html', controller: 'PatientsDetailCtrl'},
+            main: {templateUrl: 'views/documents/documents-list.html', controller: 'DocumentsListCtrl'},
+            detail: {templateUrl: 'views/documents/documents-detail.html', controller: 'DocumentsDetailCtrl'}
+          }
+        });
   })
 
   .directive('datepickerPopup', function () {
@@ -462,6 +462,39 @@ angular
       }
 
       return number.slice(0,3) + " " + number.slice(3,6) + " " + number.slice(6);
+    };
+  })
+
+  .filter('nearestAppointment', function() {
+    return function(appointments) {
+      if (appointments === undefined || !appointments.length) {
+        return false;
+      }
+      var now = moment();
+      // var oneDay = 1000 * 60 *60 * 24;
+      var nearest = appointments[0].dateOfAppointment;
+      var nearestPast = appointments[0].dateOfAppointment;
+      for (var i = 1, I = appointments.length ; i < I ; i++) {
+        var diff = now.diff(appointments[i].dateOfAppointment);
+        if (diff > 0) {
+          if (diff < now.diff(nearest) || now.diff(nearest) < 0) {
+            nearest = appointments[i].dateOfAppointment;
+          }
+        } else if (diff > now.diff(nearestPast)) {
+          nearestPast = appointments[i].dateOfAppointment;
+        }
+      }
+        moment.locale('en', {
+            calendar : {
+                sameDay: 'h:mma [today]',
+                nextDay: 'h:mma [tomorrow]',
+                nextWeek: 'h:mma dddd',
+                lastDay: 'h:mma [yesterday]',
+                lastWeek: 'h:mma [last] dddd',
+                sameElse: 'h:mma DD/MM/YYYY'
+            }
+        });
+        return moment((now.diff(nearest) > 0) ? nearest : nearestPast).calendar();
     };
   })
 

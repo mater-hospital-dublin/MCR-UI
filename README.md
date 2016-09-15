@@ -44,5 +44,24 @@ In order to serve the web assets, use the grunt command shown below. This will a
 grunt serve
 ```
 
+### Running the Socket Server
+Requires Node.js version >= 6.0.0 and MySQL
+
+Mysql connection credentials are located in socket-server/lib/db.js
+ 
+##### Install dependencies (if you have not done it before):
+```sh
+npm install
+```
+
+##### Run server:
+```sh
+node ./socket-server/scoket
+```
+##### OR
+```sh
+npm run socket-server
+```
+
 
 ##### ENJOY!
