@@ -39,7 +39,11 @@
     "karma-script-launcher": "~0.1.0",
     "karma-story-reporter": "~0.2.2",
     "load-grunt-tasks": "^0.4.0",
-    "time-grunt": "^0.3.1"
+    "time-grunt": "^0.3.1",
+    "imagemin-gifsicle": "^5.0.0",
+    "imagemin-jpegtran": "^5.0.0",
+    "imagemin-optipng": "^5.0.0",
+    "imagemin-svgo": "^5.0.0"
   },
   "dependencies": {
     "mysql": "2.11.1",
