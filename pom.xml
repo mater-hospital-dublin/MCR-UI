@@ -15,8 +15,7 @@
 ~      limitations under the License.
 ~
 -->
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
     <modelVersion>4.0.0</modelVersion>
 
@@ -27,6 +26,7 @@
 
     <name>Ripple UI</name>
     <description>Provides the core functional UI libraries to build Ripple based health systems</description>
+
     <scm>
         <connection>scm:git:https://github.com/RippleOSI/Org-Ripple-UI.git</connection>
         <tag>HEAD</tag>
@@ -52,7 +52,8 @@
         <assembly.plugin.version>2.6</assembly.plugin.version>
         <clean.plugin.version>3.0.0</clean.plugin.version>
         <compiler.plugin.version>3.5.1</compiler.plugin.version>
-        <gitscm.plugin.version>1.9.4</gitscm.plugin.version>
+        <gitscm.plugin.version>1.9.5</gitscm.plugin.version>
+        <jgitflow.plugin.version>1.0-m5.1</jgitflow.plugin.version>
         <release.plugin.version>2.5.3</release.plugin.version>
         <versions.plugin.version>2.2</versions.plugin.version>
     </properties>
@@ -60,6 +61,19 @@
     <build>
         <pluginManagement>
             <plugins>
+                <plugin>
+                    <groupId>external.atlassian.jgitflow</groupId>
+                    <artifactId>jgitflow-maven-plugin</artifactId>
+                    <version>${jgitflow.plugin.version}</version>
+                    <configuration>
+                        <flowInitContext>
+                            <versionTagPrefix>v</versionTagPrefix>
+                        </flowInitContext>
+                        <localOnly>true</localOnly>
+                        <updateDependencies>false</updateDependencies>
+                    </configuration>
+                </plugin>
+
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-clean-plugin</artifactId>
@@ -74,26 +88,28 @@
 
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-release-plugin</artifactId>
-                    <version>${release.plugin.version}</version>
-                    <dependencies>
-                        <dependency>
-                            <groupId>org.apache.maven.scm</groupId>
-                            <artifactId>maven-scm-provider-gitexe</artifactId>
-                            <version>${gitscm.plugin.version}</version>
-                        </dependency>
-                    </dependencies>
-                    <configuration>
-                        <tagNameFormat>v@{project.version}</tagNameFormat>
-                        <localCheckout>true</localCheckout>
-                        <updateWorkingCopyVersions>false</updateWorkingCopyVersions>
-                    </configuration>
+                    <artifactId>maven-assembly-plugin</artifactId>
+                    <version>${assembly.plugin.version}</version>
+                    <executions>
+                        <execution>
+                            <id>create-distribution</id>
+                            <phase>package</phase>
+                            <goals>
+                                <goal>single</goal>
+                            </goals>
+                            <configuration>
+                                <descriptors>
+                                    <descriptor>assembly/build.xml</descriptor>
+                                </descriptors>
+                            </configuration>
+                        </execution>
+                    </executions>
                 </plugin>
 
                 <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-assembly-plugin</artifactId>
-                    <version>${assembly.plugin.version}</version>
+                    <groupId>org.apache.maven.scm</groupId>
+                    <artifactId>maven-scm-provider-gitexe</artifactId>
+                    <version>${gitscm.plugin.version}</version>
                 </plugin>
 
                 <plugin>
@@ -106,23 +122,13 @@
 
         <plugins>
             <plugin>
+                <groupId>external.atlassian.jgitflow</groupId>
+                <artifactId>jgitflow-maven-plugin</artifactId>
+            </plugin>
+
+            <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-assembly-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <id>create-distribution</id>
-                        <phase>package</phase>
-                        <goals>
-                            <goal>single</goal>
-                        </goals>
-                        <configuration>
-                            <descriptors>
-                                <descriptor>assembly/build.xml</descriptor>
-                            </descriptors>
-                            <archiveBaseDirectory>${basedir}</archiveBaseDirectory>
-                        </configuration>
-                    </execution>
-                </executions>
             </plugin>
 
             <plugin>
@@ -133,11 +139,6 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-clean-plugin</artifactId>
-            </plugin>
-
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-release-plugin</artifactId>
             </plugin>
 
             <plugin>
