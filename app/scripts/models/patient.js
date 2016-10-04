@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('ripple-ui')
+angular.module('mcr-ui')
   .factory('Patient', function ($window) {
 
     var patient = function (attributes) {

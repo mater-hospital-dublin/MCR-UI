@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('ripple-ui')
+angular.module('mcr-ui')
   .factory('Report', function ($http) {
 
     var getTable = function (searchBody) {

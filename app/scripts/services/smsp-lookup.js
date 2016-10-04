@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('ripple-ui')
+angular.module('mcr-ui')
   .factory('SmspLookup', function ($http, Patient) {
 
     var byName = function (firstname, lastname) {

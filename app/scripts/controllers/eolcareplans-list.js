@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('ripple-ui')
+angular.module('mcr-ui')
   .controller('EolcareplansListCtrl', function ($scope, $location, $stateParams, SearchInput, $modal, usSpinnerService, $state, PatientService, Eolcareplan) {
 
     $scope.currentPage = 1;

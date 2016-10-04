@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('ripple-ui')
+angular.module('mcr-ui')
   .controller("AdvancedSearchController", function ($scope, $modalInstance, $state, modal, searchParams, AdvancedSearch) {
 
     $scope.modal = modal;

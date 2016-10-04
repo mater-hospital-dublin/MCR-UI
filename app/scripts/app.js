@@ -1,7 +1,7 @@
 'use strict';
 
 angular
-  .module('ripple-ui', [
+  .module('mcr-ui', [
     'ngResource',
     'ngTouch',
     'ngAnimate',

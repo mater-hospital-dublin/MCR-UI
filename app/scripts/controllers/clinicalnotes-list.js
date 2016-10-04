@@ -15,7 +15,7 @@
  */
 'use strict';
 
-angular.module('ripple-ui')
+angular.module('mcr-ui')
   .controller('ClinicalNotesListCtrl', function ($scope, $state, $stateParams, SearchInput, $location, $modal, usSpinnerService, PatientService, ClinicalNotes) {
 
     SearchInput.update();

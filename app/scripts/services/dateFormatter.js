@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('ripple-ui')
+angular.module('mcr-ui')
   .factory('DateFormatter', function () {
 
     var clean = function (date) {

@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('ripple-ui')
+angular.module('mcr-ui')
   .controller('PatientsLookupCtrl', function ($modal, $state) {
 
     $modal.open({

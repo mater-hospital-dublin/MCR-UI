@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('ripple-ui')
+angular.module('mcr-ui')
   .factory('PatientService', function ($http, Patient) {
 
     var all = function () {

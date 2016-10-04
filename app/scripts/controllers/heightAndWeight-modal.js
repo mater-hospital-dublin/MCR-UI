@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('ripple-ui')
+angular.module('mcr-ui')
   .controller('HeightAndWeightsModalCtrl', function ($scope, $modalInstance, PatientService, heightAndWeight, patient, modal) {
 
     $scope.heightAndWeight = heightAndWeight;

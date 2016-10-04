@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('ripple-ui')
+angular.module('mcr-ui')
   .controller('headerController', function ($scope, $rootScope, $window, $state, usSpinnerService, $stateParams, UserService, AdvancedSearch, socket, browserNotification) {
 
     $rootScope.searchExpression = '';

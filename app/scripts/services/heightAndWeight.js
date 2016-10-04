@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('ripple-ui')
+angular.module('mcr-ui')
   .factory('HeightAndWeight', function ($http) {
 
     var all = function (patientId) {

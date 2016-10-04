@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('ripple-ui')
+angular.module('mcr-ui')
   .controller('OrdersDetailCtrl', function ($scope, $stateParams, SearchInput, $modal, $location, usSpinnerService, PatientService, Order) {
 
     SearchInput.update();

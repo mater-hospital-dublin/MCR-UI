@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('ripple-ui')
+angular.module('mcr-ui')
   .controller('PatientsListFullCtrl', function ($scope, $rootScope, $state, $stateParams, Report, Patient) {
 
     $scope.pagingInfo = {

@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('ripple-ui')
+angular.module('mcr-ui')
   .controller('PatientsListCtrl', function ($scope, $state, $stateParams, $location, $modal, PatientService) {
 
     if ($stateParams.patientsList.length == 0 && !$stateParams.displayEmptyTable) {

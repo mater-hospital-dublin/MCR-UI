@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('ripple-ui')
+angular.module('mcr-ui')
   .factory('socket', function ($rootScope) {
     $rootScope.socketData = $rootScope.socketData || {};
     var socket = io.connect('', {port: 8070});

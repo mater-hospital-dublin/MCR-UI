@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('ripple-ui')
+angular.module('mcr-ui')
   .factory('TransferOfCare', function ($http) {
 
     var get = function (patientId, compositionId) {

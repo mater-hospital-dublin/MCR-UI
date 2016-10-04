@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('ripple-ui')
+angular.module('mcr-ui')
   .value("content", {
     "idcr_title": "IDCR POC",
     "phr_title": "PHR POC",

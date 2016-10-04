@@ -19,16 +19,16 @@
 
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>org.rippleosi</groupId>
-    <artifactId>ripple-ui</artifactId>
-    <version>0.7.3.0</version>
+    <groupId>ie.mater</groupId>
+    <artifactId>mcr-ui</artifactId>
+    <version>0.0.0.1</version>
     <packaging>pom</packaging>
 
-    <name>Ripple UI</name>
-    <description>Provides the core functional UI libraries to build Ripple based health systems</description>
+    <name>Mater Care Record UI</name>
+    <description>Provides the core functional UI libraries for the Mater Care Record</description>
 
     <scm>
-        <connection>scm:git:https://github.com/RippleOSI/Org-Ripple-UI.git</connection>
+        <connection>scm:git:https://github.com/mater-hospital-dublin/MCR-UI.git</connection>
         <tag>HEAD</tag>
     </scm>
 
