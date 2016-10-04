@@ -14,5 +14,5 @@ angular.module('mcr-ui')
     },
     "tenant_id": "Ripple",
     "tenant_name": "Ripple Demonstrator",
-    "role": "idcr"
+    "role": "IDCR"
   });

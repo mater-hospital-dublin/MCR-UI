@@ -1,92 +1,33 @@
 'use strict';
 
 angular.module('mcr-ui')
-  .controller('headerController', function ($scope, $rootScope, $window, $state, usSpinnerService, $stateParams, UserService, AdvancedSearch, socket, browserNotification) {
+  .controller('headerController', function ($scope, $rootScope, $window, $state, usSpinnerService, $stateParams, UserService, AdvancedSearch) {
 
     $rootScope.searchExpression = '';
     $scope.searchExpression = $rootScope.searchExpression;
     $scope.reportTypes = [];
-    $scope.notifications = [];
 
     $scope.searchFocused = false;
 
-    var redirectUrl;
-
     // Get current user
-    UserService.findCurrentUser().then( function (response) {
-       redirectUrl = response.headers().location;
+    UserService.setCurrentUserFromQueryString();
+    $scope.currentUser = UserService.findCurrentUser();
+    $scope.autoAdvancedSearch = $scope.currentUser.feature.autoAdvancedSearch;
 
-      if (redirectUrl) {
-        $window.location = redirectUrl;
-      }
-      else {
-        $rootScope.currentUser = response.data;
-        $scope.autoAdvancedSearch = false;
-
-        browserNotification.getNotificationPermission();
-        socket.emit('user:init', {
-          username: $scope.currentUser.username,
-          nhsNumber: $scope.currentUser.nhsNumber,
-          role: $scope.currentUser.role,
-          surname: $scope.currentUser.familyName,
-          name: $scope.currentUser.givenName
-        });
-
-
-        socket.on('user:error', function (data) {
-          console.log('user:error', data);
-          $scope.notifications.push(data.message)
-        });
-
-        socket.on('appointment:init', function (data) {
-          console.log('appointment:init', data);
-          socket.data('showJoinAppointment', data.appointmentId);
-        });
-
-        socket.on('notification:message', function (data) {
-          browserNotification.createNotification(data);
-        });
-
-        $(window).off('blur focus').on("blur focus", function (e) {
-          var prevType = $(this).data("isBlur") ? 'blur' : 'focus';
-          if (prevType != e.type && e.type == 'focus') {
-            browserNotification.closeNotifications();
-            socket.emit('window:focused');
-          }
-          $(this).data('isBlur', e.type == 'blur');
-        });
-
-        socket.on('notification:close', function () {
-          browserNotification.closeNotifications();
-        });
-
-        // Direct different roles to different pages at login
-        switch ($scope.currentUser.role) {
-          case 'IDCR':
-            $state.go('main-search');
-            break;
-          case 'PHR':
-            $state.go('patients-summary', {
-              patientId: $rootScope.currentUser.nhsNumber
-            });
-            break;
-          default:
-            $state.go('patients-summary', {
-              patientId: $rootScope.currentUser.nhsNumber
-            });
-        }
-      }
-    });
-
-    $scope.logout = function () {
-      UserService.logout().then(function (response) {
-        redirectUrl = response.headers().location;
-
-        if (redirectUrl) {
-          $window.location = redirectUrl;
-        }
-      });
-    };
+    switch ($scope.currentUser.role) {
+      case 'IDCR':
+        $state.go('main-search');
+        break;
+      case 'PHR':
+        $state.go('patients-summary', {
+          patientId: 9999999000
+        }); // id is hard coded
+        break;
+      default:
+        $state.go('patients-summary', {
+          patientId: 9999999000
+        }); // id is hard coded
+    }
 
     $rootScope.$on('$stateChangeSuccess', function (event, toState) {
       var params = $stateParams;
@@ -345,7 +286,7 @@ angular.module('mcr-ui')
         }
         if ($scope.currentUser.role === 'PHR') {
           $state.go('patients-summary', {
-            patientId: $scope.currentUser.nhsNumber
+            patientId: 9999999000
           });
         }
       };

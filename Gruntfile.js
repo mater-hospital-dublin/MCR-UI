@@ -407,6 +407,12 @@ module.exports = function (grunt) {
         dest: '<%= yeoman.app %>/scripts/tenant/',
         expand: true
       },
+      tenant_mater: {
+        cwd: '<%= yeoman.app %>/scripts/tenant/mater/',
+        src: '*.js',
+        dest: '<%= yeoman.app %>/scripts/tenant/',
+        expand: true
+      },
       theme_ripple: {
         cwd: '<%= yeoman.app %>/styles/themes/ripple/',
         src: '*.scss',
@@ -415,6 +421,12 @@ module.exports = function (grunt) {
       },
       theme_stft: {
         cwd: '<%= yeoman.app %>/styles/themes/stft/',
+        src: '*.scss',
+        dest: '<%= yeoman.app %>/styles/themes/',
+        expand: true
+      },
+      theme_mater: {
+        cwd: '<%= yeoman.app %>/styles/themes/mater/',
         src: '*.scss',
         dest: '<%= yeoman.app %>/styles/themes/',
         expand: true
