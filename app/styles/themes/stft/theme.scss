@@ -1,12 +1,17 @@
 $background-image-url: '../images/site-bg2.png';
 
-$toolbar-background: #0E682F;
+$header-colour: #FFFFFF;
+$header-bar-colour: #0E682F;
 
-$tab-background: #0E682F;
+$title-colour: #0E682F;
 
-$header-color: #0E682F;
 $header-logo-url: '../images/stft-icon.png';
 $search-logo-url: '../images/search-stft-logo.png';
+
+$footer-colour: #EEEEEE;
+$footer-title-colour: #7E7D83;
+
+$tab-background: #0E682F;
 
 $icon-chevron-color: #0E682F;
 $icon-user-color: #82BE36;
@@ -16,9 +21,17 @@ $icon-patient-landing-color: #C5E29F;
 $button-info-background: #007a41;
 $button-info-background-hover: #006938;
 $button-success-background: #007a41;
+$button-success-background-hover: #006938;
 $button-main-nav-background-hover: #f4f8ec;
 
+$advanced-search-text-colour: #1E1E1E;
+
+$modal-header-colour: #007a41;
+
 $table-header-background: #C5E29F;
+$table-header-text-colour: #1E1E1E;
+
+$table-row-selected-background: #7dbe31;
 $table-row-background-hover: #EDF2C3;
 
 $panel-background: #007a41;

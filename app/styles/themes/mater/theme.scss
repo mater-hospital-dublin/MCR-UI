@@ -1,29 +1,42 @@
-$background-image-url: '../images/site-bg2.png';
+$background-image-url: '../images/mater-bg.png';
 
-$toolbar-background: #0E682F;
+$header-colour: #2C587F;
+$header-bar-colour: #1D3E5D;
 
-$tab-background: #0E682F;
+$title-colour: #FFFFFF;
 
-$header-color: #0E682F;
-$header-logo-url: '../images/stft-icon.png';
-$search-logo-url: '../images/search-stft-logo.png';
+$header-logo-url: '../images/mater-logo-white.png';
+$search-logo-url: '../images/mater-logo-blue.png';
 
-$icon-chevron-color: #0E682F;
-$icon-user-color: #82BE36;
-$icon-main-nav-color: #7cbe31;
+$footer-colour: #1D3E5D;
+$footer-title-colour: #EEEEEE;
+
+$tab-background: #2C587F;
+
+$icon-chevron-color: #FFFFFF;
+$icon-user-color: #FFFFFF;
+$icon-main-nav-color: #2C587F;
 $icon-patient-landing-color: #C5E29F;
 
-$button-info-background: #007a41;
-$button-info-background-hover: #006938;
-$button-success-background: #007a41;
+$button-info-background: #2C587F;
+$button-info-background-hover: #1D3E5D;
+$button-success-background: #2C587F;
+$button-success-background-hover: #1D3E5D;
 $button-main-nav-background-hover: #f4f8ec;
 
-$table-header-background: #C5E29F;
-$table-row-background-hover: #EDF2C3;
+$advanced-search-text-colour: #EEEEEE;
 
-$panel-background: #007a41;
+$modal-header-colour: #2C587F;
 
-$link-color-hover: #7cbe31;
+$table-header-background: #2C587F;
+$table-header-text-colour: #EEEEEE;
+
+$table-row-selected-background: #0909fd;
+$table-row-background-hover: rgba(231, 253, 9, 0.31);
+
+$panel-background: #2C587F;
+
+$link-color-hover: #7E7D83;
 
 $rounded-connected-background: #C5E29F;
 

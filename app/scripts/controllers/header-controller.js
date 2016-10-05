@@ -271,13 +271,13 @@ angular.module('mcr-ui')
       };
 
       if ($scope.currentUser.role === 'PHR') {
-        $scope.title = 'PHR POC'
+        $scope.title = UserService.getContent('phr_title')
       }
       else {
-        $scope.title = 'IDCR POC'
+        $scope.title = UserService.getContent('idcr_title')
       }
 
-      $scope.footer = 'Integrated Digital Care Record';
+      $scope.footer = UserService.getContent('idcr_footer');
 
       $scope.goHome = function () {
         $scope.cancelSearchMode();

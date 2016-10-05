@@ -217,8 +217,8 @@ a[ui-sref] {
 .btn-info:active,
 .btn-info.active {
   background-color: $button-info-background;
-  border-color: $button-info-background;
   color: #fff;
+  border: 1px solid #FFFFFF;
 }
 
   .btn-info:hover,
@@ -227,15 +227,18 @@ a[ui-sref] {
   }
 
 .btn-success,
-.btn-success:hover,
 .btn-success:focus,
 .btn-success:active,
 .btn-success.active {
   background-color: $button-success-background;
-  border-color: $button-success-background;
   padding-left: 22px;
   padding-right: 22px;
+  border: 1px solid #FFFFFF;
 }
+
+  .btn-success:hover {
+    background-color: $button-success-background-hover;
+  }
 
 label {
   font-weight: normal;
@@ -322,14 +325,14 @@ label {
   border-top-right-radius: 6px;
   padding-bottom: 0;
   border-bottom: 0;
-  background-color: #007a41;
+  background-color: $modal-header-colour;
 }
 
 .modal-title {
   padding: 4px 10px 10px;
   font-weight: bold;
   color: #fff;
-  background-color: #007a41;
+  background-color: $modal-header-colour;
 }
 
 .modal-footer {
@@ -881,30 +884,31 @@ body:after {
 /* Header */
 
 .header-background {
-  background-color: #FFFFFF;
-  padding-top: 20px;
+  background-color: $header-colour;
+  padding-top: 10px;
   padding-bottom: 5px;
+  margin-bottom: 0;
   line-height: 0;
-  margin-right: 0px;
+  margin-right: 0;
 }
 
 .header-background-mobile {
-  background-color: #FFFFFF;
-  padding-top: 0px;
+  background-color: $header-colour;
+  padding-top: 0;
   z-index: -1;
 }
 
 .header-title-1 {
-  color: $header-color;
+  color: $title-colour;
   white-space: nowrap;
 }
 
 .header-title-2 {
-  color: $header-color;
+  color: $title-colour;
 }
 
 .header-title-3 {
-  color: #000000;
+  color: $title-colour;
 }
 
 .header-icon {
@@ -1117,6 +1121,7 @@ body:after {
   color: #FFF;
   font-family: 'hero';
   padding-top: 5%;
+  margin-left: 22.5%;
 }
 
   .search-logo {
@@ -1124,7 +1129,7 @@ body:after {
     width: 20%;
     display: block;
     margin: 0 auto 5% auto;
-    content: url("../../images/search-ripple-logo.png");
+    content: url($search-logo-url);
   }
 
   .main-search-inner {
@@ -1160,6 +1165,14 @@ body:after {
 .advanced-search-text {
   font-size: 12px;
   margin-top: 11px;
+}
+
+.advanced-search-text a {
+  color: $advanced-search-text-colour;
+  margin-right: 125px;
+}
+.advanced-search-text a:hover {
+  color: $link-color-hover;
 }
 
 .icon-searchbar:before {
@@ -1258,6 +1271,8 @@ i.clearAll {
   color: #FFF;
   font-family: 'hero';
   padding-top: 12px;
+  padding-left: 60px;
+  padding-right: 40px;
 }
 
   .header-search-inner {
@@ -1290,7 +1305,7 @@ i.clearAll {
 
 .header-right {
   font-size: 20px;
-  padding-right: 40px;
+  padding-right: 50px;
   text-align: right;
   font-family: "Hero";
 }
@@ -1321,10 +1336,12 @@ i.clearAll {
 
 .glyphicon-user:before {
   color: $icon-user-color;
+  margin-right: 3px;
 }
 
 .glyphicon-chevron-down:before {
   color: $icon-chevron-color;
+  margin-left: 3px;
 }
 
 .glyphicon-chevron-right:before {
@@ -1343,16 +1360,17 @@ i.clearAll {
 /* Toolbar */
 
 .header-toolbar {
-  background-color: $toolbar-background;
+  background-color: $header-bar-colour;
   font-size: 22px;
+  height: 40px;
   color: #000000;
   margin-left: -5.5%;
-  margin-right: 0px;
+  margin-right: 0;
 /*
   padding-top: 10px;
   padding-bottom: 10px;
 */
-  border-top: 1px solid #CCCCCC;
+  border-top: none;
   border-bottom: 1px solid #CCCCCC;
 }
 
@@ -1389,6 +1407,7 @@ i.clearAll {
 .current-page-title {
   font-family: "Hero";
   color: #FFF;
+  line-height: 1.7;
 }
 
 .current-page-title-mobile {
@@ -1403,25 +1422,26 @@ i.clearAll {
 footer {
   position: fixed;
   bottom: 0;
-  width: 100%
+  width: 100%;
+  margin-bottom: 0;
 }
 
 .footer-background {
-  background-color: #EEEEEE;
+  background-color: $footer-colour;
   height: 40px;
   padding-top: 10px;
 }
 
 .footer-title-1 {
   font-size: 10px;
-  color: #7E7D83;
+  color: $footer-title-colour;
   font-family: "Hero";
   display: inline;
 }
 
 .footer-title-2 {
   font-size: 10px;
-  color: $header-color;
+  color: $footer-title-colour;
   font-family: "Hero";
   display: inline;
 }
@@ -1719,6 +1739,7 @@ table.table {
 }
 
 .table thead {
+  color: $table-header-text-colour;
   background-color: $table-header-background;
 }
 
@@ -2461,7 +2482,6 @@ div.transbox {
   opacity: 0.7;
   filter: alpha(opacity=70);
   color: #000000;
-  margin-right: 5%;
 }
 
 div.transbox .innerTransbox {
