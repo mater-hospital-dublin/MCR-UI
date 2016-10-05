@@ -306,7 +306,7 @@ label {
 
 .panel-default > .panel-heading {
   /*background-color: #1CA54F; - Previous Green*/
-  background-color: $panel-background;
+  background-color: $header-bar-colour;
   border-radius: 0;
   border-bottom: 0;
 }
@@ -1924,7 +1924,7 @@ table.table {
 }
 
 .board h2 i {
-  color: #7dbf31;
+  color: $icon-main-nav-color;
   margin-right: 4px;
 }
 
@@ -2368,7 +2368,7 @@ textarea#procedureNotes {
 }
 
 .fa-filter {
-  color: #82BF36;
+  color: $icon-main-nav-color;
 }
 
 .fa-ellipsis-h {
