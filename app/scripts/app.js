@@ -55,14 +55,6 @@ angular
         }
       })
 
-      .state('patients-lookup', {
-        url: '/lookup',
-        views: {
-          actions: { templateUrl: 'views/home-sidebar.html' },
-          main: { controller: 'PatientsLookupCtrl' }
-        }
-      })
-
       .state('patients-summary', {
         url: '/patients/{patientId:int}/patients-summary?reportType&searchString&queryType',
         views: {
