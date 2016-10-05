@@ -4,6 +4,7 @@ angular.module('mcr-ui')
   .controller('ClinicalNotesModalCtrl', function ($scope, $modalInstance, UserService, clinicalNote, patient, modal) {
 
     $scope.currentUser = UserService.findCurrentUser();
+
     $scope.clinicalNote = clinicalNote;
     $scope.patient = patient;
     $scope.modal = modal;

@@ -3,9 +3,7 @@
 angular.module('mcr-ui')
   .controller('EolcareplansModalCtrl', function ($scope, $filter, $modalInstance, UserService, eolcareplan, patient, modal) {
 
-    UserService.findCurrentUser().then( function (result) {
-      $scope.currentUser = result.data;
-    });
+    $scope.currentUser = UserService.findCurrentUser();
 
     $scope.eolcareplan = eolcareplan;
     $scope.patient = patient;

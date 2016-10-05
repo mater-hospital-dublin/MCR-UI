@@ -5,9 +5,7 @@ angular.module('mcr-ui')
 
     $('#dateofreferral').datepicker({ dateFormat: 'dd-MMM-y' });
 
-    UserService.findCurrentUser().then( function (result) {
-      $scope.currentUser = result.data;
-    });
+    $scope.currentUser = UserService.findCurrentUser();
 
     $scope.referral = referral;
     $scope.patient = patient;

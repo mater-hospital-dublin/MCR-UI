@@ -3,9 +3,7 @@
 angular.module('mcr-ui')
   .controller('OrdersModalCtrl', function ($scope, $modalInstance, Order, UserService, order, patient, modal) {
 
-    UserService.findCurrentUser().then( function (result) {
-      $scope.currentUser = result.data;
-    });
+    $scope.currentUser = UserService.findCurrentUser();
 
     $scope.order = order;
     $scope.patient = patient;

@@ -3,9 +3,7 @@
 angular.module('mcr-ui')
   .controller('AllergiesModalCtrl', function ($scope, $modalInstance, allergy, UserService, patient, modal) {
 
-    UserService.findCurrentUser().then( function (result) {
-      $scope.currentUser = result.data;
-    });
+    $scope.currentUser = UserService.findCurrentUser();
 
     $scope.allergy = allergy;
     $scope.patient = patient;

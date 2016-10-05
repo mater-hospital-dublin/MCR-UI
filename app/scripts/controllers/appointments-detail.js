@@ -6,9 +6,7 @@ angular.module('mcr-ui')
 
     $scope.isClosed = false;
 
-    UserService.findCurrentUser().then(function (result) {
-      $scope.currentUser = result.data;
-    });
+    $scope.currentUser = UserService.findCurrentUser();
 
     PatientService.get($stateParams.patientId).then(function (patient) {
       $scope.patient = patient;
