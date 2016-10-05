@@ -1427,6 +1427,10 @@ footer {
   z-index: 100;
 }
 
+.row {
+  margin-right: 0 !important;
+}
+
 .footer-background {
   background-color: $footer-colour;
   padding-top: 10px;
