@@ -1176,7 +1176,7 @@ body:after {
 }
 
 .icon-searchbar:before {
-  color: #82BE36;
+  color: $icon-main-nav-color;
   font-size: 20px;
 }
 
@@ -1425,6 +1425,7 @@ footer {
   width: 100%;
   margin-bottom: 0;
   z-index: 100;
+  height: 40px;
 }
 
 .footer-background {
@@ -1700,7 +1701,7 @@ svg {
 /* Patient List */
 
 .glyphicon-list-patients:before {
-  color: #7cbe31;
+  color: $icon-main-nav-color;
 }
 
 /* Patient Landing */
