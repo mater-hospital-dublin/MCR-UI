@@ -4,11 +4,17 @@ angular.module('mcr-ui')
   .factory('Result', function ($http) {
 
     var get = function (patientId, compositionId, source) {
-      return $http.get('/api/patients/' + patientId + '/labresults/' + compositionId + '?source=' + source);
+      // TODO reinstate the following line when test data for Mater patients has been loaded
+      // return $http.get('/api/patients/' + patientId + '/labresults/' + compositionId + '?source=' + source);
+
+      return $http.get('/api/patients/' + '9999999000' + '/labresults/' + compositionId + '?source=' + source);
     };
 
     var all = function (patientId) {
-      return $http.get('/api/patients/' + patientId + '/labresults');
+      // TODO reinstate the following line when test data for Mater patients has been loaded
+      // return $http.get('/api/patients/' + patientId + '/labresults');
+
+      return $http.get('/api/patients/' + '9999999000' + '/labresults');
     };
 
     return {

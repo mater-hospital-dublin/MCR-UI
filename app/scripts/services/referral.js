@@ -4,23 +4,31 @@ angular.module('mcr-ui')
   .factory('Referral', function ($http) {
 
     var all = function (patientId) {
-      return $http.get('/api/patients/' + patientId + '/referrals');
+      // TODO reinstate the following line when test data for Mater patients has been loaded
+      // return $http.get('/api/patients/' + patientId + '/referrals');
+
+      return $http.get('/api/patients/' + '9999999000' + '/referrals');
     };
 
     var get = function (patientId, compositionId) {
-      return $http.get('/api/patients/' + patientId + '/referrals/' + compositionId);
+      // TODO reinstate the following line when test data for Mater patients has been loaded
+      // return $http.get('/api/patients/' + patientId + '/referrals/' + compositionId);
+
+      return $http.get('/api/patients/' + '9999999000' + '/referrals/' + compositionId);
     };
 
     var create = function (patientId, composition) {
-      console.log('post referral comp:');
-      console.log(composition);
-      return $http.post('/api/patients/' + patientId + '/referrals', composition);
+      // TODO reinstate the following line when test data for Mater patients has been loaded
+      // return $http.post('/api/patients/' + patientId + '/referrals', composition);
+
+      return $http.post('/api/patients/' + '9999999000' + '/referrals', composition);
     };
 
     var update = function (patientId, composition) {
-      console.log('put referral comp:');
-      console.log(composition);
-      return $http.put('/api/patients/' + patientId + '/referrals', composition);
+      // TODO reinstate the following line when test data for Mater patients has been loaded
+      // return $http.put('/api/patients/' + patientId + '/referrals', composition);
+
+      return $http.put('/api/patients/' + '9999999000' + '/referrals', composition);
     };
 
     return {
