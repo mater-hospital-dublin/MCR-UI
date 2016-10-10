@@ -436,7 +436,7 @@ angular
           // Strip white space
           if(value) {
             var nhsNum = value.replace(/\s+/g, '');
-            var valid = !isNaN(nhsNum) && nhsNum.length === 10;
+            var valid = !isNaN(nhsNum) && nhsNum.length === 7;
 
             ctrl.$setValidity('invalidNHSNumFormat', valid);
 

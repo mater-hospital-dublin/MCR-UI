@@ -90,7 +90,7 @@ angular.module('mcr-ui')
 
       var nhsNumber = value.replace(/\s+/g, '');
 
-      return !isNaN(nhsNumber) && nhsNumber.length > 0 && nhsNumber.length < 10;
+      return !isNaN(nhsNumber) && nhsNumber.length > 0 && nhsNumber.length < 7;
     };
 
     $scope.isNhsNumberTooLong = function (value) {
@@ -100,7 +100,7 @@ angular.module('mcr-ui')
 
       var nhsNumber = value.replace(/\s+/g, '');
 
-      return !isNaN(nhsNumber) && nhsNumber.length > 10;
+      return !isNaN(nhsNumber) && nhsNumber.length > 7;
     };
 
     $scope.isNhsNumberFieldInvalid = function (nhsNumberField) {
