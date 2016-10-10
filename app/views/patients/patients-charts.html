@@ -17,7 +17,7 @@
 
         <select ng-model="selectedChart" ng-change="toggleChart()" name="type" class="form-control chartSelectList">
           <option value="age">Patients By Age</option>
-          <option value="setting">Patients By Setting</option>
+          <option value="setting">Patients By Ward</option>
         </select>
         <br>
 
@@ -52,7 +52,7 @@
         </div>
         <!-- END Age Chart -->
 
-    <!--  Chart Setting -->
+    <!--  Chart Ward -->
     <div class="chart setting soft-hide" ng-class="{hoverChart: hover}" ng-mouseenter="hover = true" ng-mouseleave="hover = false"  id="setting">
 
         <span class="fa-stack fa-lg pull-left chart-fa-stack hidden-xs" >
@@ -61,8 +61,8 @@
         </span>
       <div class="chart-title-group-container hidden-xs">
         <div class="pull-left chart-title-group">
-          <h2 class="chart-title">Patients by <span class="chart-title-setting">Setting</span></h2>
-          <p class="chart-description">This is a brief description of patients by setting.</p>
+          <h2 class="chart-title">Patients by <span class="chart-title-setting">Ward</span></h2>
+          <p class="chart-description">This is a brief description of patients by ward.</p>
         </div>
       </div>
 
@@ -73,8 +73,8 @@
           </span>
       <div class="chart-title-group-container visible-xs">
         <div class="pull-left chart-title-group-mobile">
-          <h2 class="chart-title" >Patients by <span class="chart-title-setting">Setting</span></h2>
-          <p class="chart-description visible-xs" >This is a brief description of patients by setting.</p>
+          <h2 class="chart-title" >Patients by <span class="chart-title-setting">Ward</span></h2>
+          <p class="chart-description visible-xs" >This is a brief description of patients by ward.</p>
         </div>
       </div>
 

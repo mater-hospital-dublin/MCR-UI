@@ -22,16 +22,11 @@ angular.module('mcr-ui')
       $scope.contactsCount = patient.contacts.length;
       $scope.contacts = patient.contacts.slice(0, 5);
 
-      $scope.transferofCaresCount = patient.transfers.length;
-      $scope.transferofCareComposition = patient;
+      $scope.ordersCount = patient.orders.length;
+      $scope.orders = patient.orders.slice(0, 5);
 
-      var descendingTransferofCareComposition = [];
-      for (var x = $scope.transferofCareComposition.transfers.length - 1; x >= 0; x--) {
-        descendingTransferofCareComposition.push($scope.transferofCareComposition.transfers[x]);
-      }
-
-      $scope.transferofCareComposition.transfers = descendingTransferofCareComposition;
-      $scope.transferofCareComposition = $scope.transferofCareComposition.transfers.slice(0, 5);
+      $scope.resultsCount = patient.results.length;
+      $scope.results = patient.results.slice(0, 5);
 
       usSpinnerService.stop('patientSummary-spinner');
     });
@@ -50,22 +45,26 @@ angular.module('mcr-ui')
 
       var toState = '';
       switch (section) {
-      case 'Problems':
-        toState = 'diagnoses-list';
-        break;
-      case 'Allergies':
-        toState = 'allergies';
-        break;
-      case 'Medications':
-        toState = 'medications';
-        break;
-      case 'Contacts':
-        toState = 'contacts';
-        break;
-      case 'Transfer':
-        toState = 'transferOfCare';
-        break;
+        case 'Problems':
+          toState = 'diagnoses-list';
+          break;
+        case 'Allergies':
+          toState = 'allergies';
+          break;
+        case 'Medications':
+          toState = 'medications';
+          break;
+        case 'Contacts':
+          toState = 'contacts';
+          break;
+        case 'Orders':
+          toState = 'orders';
+          break;
+        case 'Results':
+          toState = 'results';
+          break;
       }
+
       $state.go(toState, requestHeader);
     };
 
