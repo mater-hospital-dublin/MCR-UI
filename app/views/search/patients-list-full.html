@@ -16,10 +16,10 @@
   -->
 
 <div ng-cloak ng-controller="PatientsListFullCtrl" class="patients-list-context">
-  
+
   <div class="container-fluid">
     <div class="row">
-  
+
       <div class="col-md-7 col-sm-5 col-xs-12 patient-list-full-subheader">
         <span class="subheader pull-left"><i class="glyphicon glyphicon-list glyphicon-list-patients"></i> {{subHeader}}</span>
         <div class="dropdown pull-right visible-xs">
@@ -44,7 +44,7 @@
               <th>Address</th>
               <th>DOB</th>
               <th>Gender</th>
-              <th ng-click="sort()" ng-class="orderBy()">NHS No.</th>
+              <th ng-click="sort()" ng-class="orderBy()">IHI Number</th>
             </tr>
           </thead>
           <tbody>
@@ -53,7 +53,7 @@
               <td data-th="Address">{{ patient.address }}</td>
               <td data-th="DOB" class="dateTime">{{ patient.dateOfBirth | date:'dd-MMM-yyyy' }}</td>
               <td data-th="Gender">{{ patient.gender }}</td>
-              <td data-th="NHS No.">{{ patient.nhsNumber | formatNHSNumber }} <span class="glyphicon glyphicon-chevron-right" style="float: right"></span> </td>
+              <td data-th="IHI Number">{{ patient.nhsNumber | formatNHSNumber }} <span class="glyphicon glyphicon-chevron-right" style="float: right"></span> </td>
             </tr>
           </tbody>
         </table>
@@ -95,16 +95,16 @@
 
 
         </div>
-          
+
       </div>
-    
+
       <div ng-show="pagingInfo.totalItems == 0" ng-cloak class="ng-cloak">
         <div ng-cloak class="col-md-12 col-sm-12 col-xs-12 ng-cloak">
           <div ng-cloak class="no-results ng-cloak" ng-bind="noResults"></div>
         </div>
       </div>
-      
-      
+
+
     </div>
   </div>
 </div>

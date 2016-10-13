@@ -105,7 +105,7 @@ angular.module('mcr-ui')
 
           $scope.patients = patients;
           $scope.pagingInfo.totalItems = result.data.totalPatients;
-          if ($scope.pagingInfo.totalItems === 0) {
+          if ($scope.pagingInfo.totalItems == 0) {
             $scope.noResults = 'There are no results that match your search criteria';
           } else {
             $scope.processData();
