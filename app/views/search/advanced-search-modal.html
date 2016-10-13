@@ -11,7 +11,7 @@
         <div class="form-group"
              ng-class="{'has-error': !detailsFocused && isNhsNumberFieldInvalid(advancedSearchForm.nhsNumber) && areDetailsFieldsClean(advancedSearchForm),
                         'has-success': !detailsFocused && advancedSearchForm.nhsNumber.$valid && advancedSearchForm.nhsNumber.$dirty}">
-          <label for="nhsNumber" class="control-label col-md-12">NHS Number</label>
+          <label for="nhsNumber" class="control-label col-md-12">IHI Number</label>
           <div class="col-md-6">
             <div class="input-group">
               <input type="text" tabindex="1" class="form-control input-sm" id="nhsNumber" name="nhsNumber" ng-model="searchParams.nhsNumber" focus-element="nhsNumberFocus" is-valid-nhs-number ng-focus="detailsFocused=false" ng-required="!detailsFocused"/>
@@ -20,11 +20,11 @@
           </div>
           <div class="col-md-6">
             <div class="col-inline-label">
-              e.g. 123 456 7890
+              e.g. 012 345 6
             </div>
             <span class="required-label" ng-show="!detailsFocused && isNhsNumberRequired(advancedSearchForm)">*Required</span>
-            <span class="required-label" ng-show="!detailsFocused && isNhsNumberTooShort(advancedSearchForm.nhsNumber.$viewValue)">*NHS Number too short</span>
-            <span class="required-label" ng-show="!detailsFocused && isNhsNumberTooLong(advancedSearchForm.nhsNumber.$viewValue)">*NHS Number too long</span>
+            <span class="required-label" ng-show="!detailsFocused && isNhsNumberTooShort(advancedSearchForm.nhsNumber.$viewValue)">*IHI Number too short</span>
+            <span class="required-label" ng-show="!detailsFocused && isNhsNumberTooLong(advancedSearchForm.nhsNumber.$viewValue)">*IHI Number too long</span>
           </div>
         </div>
 
