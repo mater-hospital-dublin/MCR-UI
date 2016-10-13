@@ -8,7 +8,7 @@ angular.module('mcr-ui')
     "email": "jlumb@gmail.com",
     "scope": {
       "homeView": "search",
-      "autoAdvancedSearch": true,
+      "autoAdvancedSearch": false,
       "setting2": true,
       "setting3": true
     },
