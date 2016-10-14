@@ -25,7 +25,7 @@
         <ul class="list-inline">
           <li><label>Gender:</label> <strong>{{ patient.gender }}</strong></li>
           <li><label>DOB:</label>  <strong>{{ patient.dateOfBirth | date:'dd-MMM-yyyy' }}</strong></li>
-          <li class="nhsLabel"><label>IHI No.:</label> <strong><span ng-bind="patient.nhsNumber | formatNHSNumber"></span></strong></li>
+          <li class="nhsLabel"><label>MRN Number:</label> <strong><span ng-bind="patient.mrnNumber | formatMrnNumber"></span></strong></li>
         </ul>
       </div>
     </div>
@@ -37,7 +37,7 @@
           <td width="40%"><label>Address:</label>  <strong>{{ patient.address }}</strong></td>
           <td width="20%"><label>Phone:</label> <strong>{{ patient.telephone }}</strong></td>
           <td width="20%"><label>GP Details:</label> <strong>{{ patient.gpDetails }}</strong></td>
-          <td width="20%"><label>PAS No.:</label> <strong>{{ patient.pasNumber }}</strong></td>
+          <td width="20%"><label>IHI Number:</label> <strong>{{ patient.ihiNumber }}</strong></td>
         </tr>
       </tbody>
     </table>
@@ -59,8 +59,8 @@
     </div>
 
     <div class="form-group">
-      <label>PAS No.:</label><br/>
-      <strong>{{ patient.pasNumber }}</strong>
+      <label>IHI Number:</label><br/>
+      <strong>{{ patient.ihiNumber }}</strong>
     </div>
   </div>
 </div>

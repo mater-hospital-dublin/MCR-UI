@@ -22,7 +22,7 @@ angular.module('mcr-ui')
             searchParams: function() {
               var params = {};
               if (!isNaN(expression)) {
-                params.nhsNumber = expression;
+                params.mrnNumber = expression;
               } else {
                 params.surname = expression;
               }

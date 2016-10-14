@@ -9,14 +9,14 @@ angular.module('mcr-ui')
     $scope.detailsFocused = false;
     $scope.modalReopened = false;
 
-    if ($scope.searchParams.nhsNumber) {
-      $scope.nhsNumberFocus = true;
+    if ($scope.searchParams.mrnNumber) {
+      $scope.mrnNumberFocus = true;
     }
     else if ($scope.searchParams.surname) {
       $scope.surnameFocus = true;
     }
     else {
-      $scope.nhsNumberFocus = true;
+      $scope.mrnNumberFocus = true;
     }
 
     if ($scope.searchParams.dateOfBirth) {
@@ -31,6 +31,8 @@ angular.module('mcr-ui')
 
     $scope.ok = function (searchForm) {
       if (searchForm.$valid) {
+        $scope.searchParams.nhsNumber = $scope.searchParams.mrnNumber;
+
         AdvancedSearch.searchByDetails($scope.searchParams).then(function (result) {
           $scope.patients = result.data;
           changeState();
@@ -44,7 +46,7 @@ angular.module('mcr-ui')
 
       if ($scope.patients.length == 1) {
         $state.go('patients-summary', {
-          patientId: $scope.patients[0].nhsNumber
+          patientId: $scope.patients[0].mrnNumber
         });
       }
       else if ($scope.patients.length > 1) {
@@ -69,42 +71,42 @@ angular.module('mcr-ui')
       $scope[name] = true;
     };
 
-    $scope.isNhsNumberRequired = function (advancedSearchForm) {
-      var nhsNumber = $scope.advancedSearchForm.nhsNumber.$viewValue;
+    $scope.isMrnNumberRequired = function (advancedSearchForm) {
+      var mrnNumber = $scope.advancedSearchForm.mrnNumber.$viewValue;
 
-      if (nhsNumber === undefined && $scope.areDetailsFieldsClean(advancedSearchForm)) {
+      if (mrnNumber === undefined && $scope.areDetailsFieldsClean(advancedSearchForm)) {
         return true;
       }
 
-      nhsNumber = nhsNumber.replace(/\s+/g, '');
+      mrnNumber = mrnNumber.replace(/\s+/g, '');
 
-      var nhsNumberInvalid = isNaN(nhsNumber) || (advancedSearchForm.nhsNumber.$invalid && nhsNumber.length === 0);
+      var mrnNumberInvalid = isNaN(mrnNumber) || (advancedSearchForm.mrnNumber.$invalid && mrnNumber.length === 0);
 
-      return nhsNumberInvalid && $scope.areDetailsFieldsClean(advancedSearchForm);
+      return mrnNumberInvalid && $scope.areDetailsFieldsClean(advancedSearchForm);
     };
 
-    $scope.isNhsNumberTooShort = function (value) {
+    $scope.isMrnNumberTooShort = function (value) {
       if (value === undefined) {
         return false;
       }
 
-      var nhsNumber = value.replace(/\s+/g, '');
+      var mrnNumber = value.replace(/\s+/g, '');
 
-      return !isNaN(nhsNumber) && nhsNumber.length > 0 && nhsNumber.length < 7;
+      return !isNaN(mrnNumber) && mrnNumber.length > 0 && mrnNumber.length < 7;
     };
 
-    $scope.isNhsNumberTooLong = function (value) {
+    $scope.isMrnNumberTooLong = function (value) {
       if (value === undefined) {
         return false;
       }
 
-      var nhsNumber = value.replace(/\s+/g, '');
+      var mrnNumber = value.replace(/\s+/g, '');
 
-      return !isNaN(nhsNumber) && nhsNumber.length > 7;
+      return !isNaN(mrnNumber) && mrnNumber.length > 7;
     };
 
-    $scope.isNhsNumberFieldInvalid = function (nhsNumberField) {
-      return nhsNumberField.$invalid || nhsNumberField.$pristine;
+    $scope.isMrnNumberFieldInvalid = function (mrnNumberField) {
+      return mrnNumberField.$invalid || mrnNumberField.$pristine;
     };
 
     $scope.areDetailsFieldsClean = function (advancedSearchForm) {

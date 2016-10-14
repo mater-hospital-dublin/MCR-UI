@@ -193,7 +193,7 @@ angular.module('mcr-ui')
     $scope.go = function (patient) {
       if (!$scope.clickGetItem) {
         $state.go('patients-summary', {
-          patientId: patient.nhsNumber,
+          patientId: patient.mrnNumber,
           ageFrom: $stateParams.ageFrom,
           ageTo: $stateParams.ageTo,
           orderType: $stateParams.orderType,
@@ -206,10 +206,10 @@ angular.module('mcr-ui')
       $scope.clickGetItem = false;
     };
 
-    $scope.goToSection = function (itemType, nhsNumber) {
+    $scope.goToSection = function (itemType, mrnNumber) {
       $scope.clickGetItem = true;
       var requestHeader = {
-        patientId: nhsNumber,
+        patientId: mrnNumber,
         ageFrom: $stateParams.ageFrom,
         ageTo: $stateParams.ageTo,
         orderType: $stateParams.orderType,
@@ -238,10 +238,10 @@ angular.module('mcr-ui')
       $state.go(toState, requestHeader);
     };
 
-    $scope.getItem = function (itemType, nhsNumber, itemId) {
+    $scope.getItem = function (itemType, mrnNumber, itemId) {
       $scope.clickGetItem = true;
       var requestHeader = {
-        patientId: nhsNumber,
+        patientId: mrnNumber,
         ageFrom: $stateParams.ageFrom,
         ageTo: $stateParams.ageTo,
         orderType: $stateParams.orderType,

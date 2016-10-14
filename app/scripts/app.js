@@ -419,7 +419,7 @@ angular
     };
   })
 
-  .directive('isValidNhsNumber', function() {
+  .directive('isValidMrnNumber', function() {
     return {
       restrict: 'A',
       require: 'ngModel',
@@ -435,19 +435,19 @@ angular
         var checkFormat = function(value) {
           // Strip white space
           if(value) {
-            var nhsNum = value.replace(/\s+/g, '');
-            var valid = !isNaN(nhsNum) && nhsNum.length === 7;
+            var mrnNum = value.replace(/\s+/g, '');
+            var valid = !isNaN(mrnNum) && mrnNum.length === 7;
 
-            ctrl.$setValidity('invalidNHSNumFormat', valid);
+            ctrl.$setValidity('invalidMRNNumFormat', valid);
 
-            return valid ? nhsNum : '';
+            return valid ? mrnNum : '';
           }
         }
       }
     }
   })
 
-  .filter('formatNHSNumber', function() {
+  .filter('formatMrnNumber', function() {
     return function(number) {
       if (number === undefined) {
         return;

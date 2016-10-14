@@ -48,7 +48,7 @@ $(document).ready(function () {
       user = usr;
       socket.emit('user:init', {
         username: user.username,
-        nhsNumber: user.nhsNumber,
+        mrnNumber: user.mrnNumber,
         role: user.role,
         surname: user.familyName,
         name: user.givenName
@@ -149,7 +149,7 @@ $(document).ready(function () {
       $('#patientName').text(data.name);
       $('#patientDob').text(moment(data.dateOfBirth).format('DD-MMM-YYYY'));
       $('#patientGender').text(data.gender);
-      $('#patientNhs').text(data.nhsNumber);
+      $('#patientNhs').text(data.mrnNumber);
     });
     $.get('/api/patients/' + data.patientId + '/appointments/' + appointmentId).then(function (data) {
       var appointment = data;
