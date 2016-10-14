@@ -106,7 +106,7 @@ angular.module('mcr-ui')
     };
 
     $scope.isMrnNumberFieldInvalid = function (mrnNumberField) {
-      return mrnNumberField.$invalid || mrnNumberField.$pristine;
+      return mrnNumberField == undefined || mrnNumberField.$invalid || mrnNumberField.$pristine;
     };
 
     $scope.areDetailsFieldsClean = function (advancedSearchForm) {
