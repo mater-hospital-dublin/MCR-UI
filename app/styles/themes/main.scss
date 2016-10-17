@@ -1908,14 +1908,14 @@ table.table {
 }
 
 .board h2 a:hover {
-  color: #7dbe31;
+  color: $link-color-hover;
   text-decoration: none;
 }
 
 .board h2 .resultcount {
   float: right;
   font-size: 12px;
-  color: #106333;
+  color: $link-color-hover;
   line-height: 2.4em;
 }
 
