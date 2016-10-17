@@ -34,8 +34,8 @@ angular.module('mcr-ui')
     }
 
     function getData() {
-      if ($stateParams.queryType === 'Setting: ') {
-        $rootScope.settingsMode = true;
+      if ($stateParams.queryType === 'Ward: ') {
+        $rootScope.wardMode = true;
         $rootScope.reportMode = false;
         $rootScope.patientMode = false;
         $rootScope.subHeader = $stateParams.queryType + $stateParams.searchString;
@@ -44,7 +44,7 @@ angular.module('mcr-ui')
           orderType: $stateParams.orderType,
           pageNumber: $stateParams.pageNumber
         };
-        Report.getSettingsTable(patientListQuery).then(function (result) {
+        Report.getWardTable(patientListQuery).then(function (result) {
           $scope.patients = result.data.patientDetails;
           $scope.pagingInfo.totalItems = result.data.totalPatients;
 
@@ -57,7 +57,7 @@ angular.module('mcr-ui')
 
       } else if ($stateParams.queryType === 'Reports: ') {
         $rootScope.reportMode = true;
-        $rootScope.settingsMode = false;
+        $rootScope.wardMode = false;
         $rootScope.patientMode = false;
         $rootScope.reportTypeSet = true;
         $rootScope.reportTypeString = $stateParams.reportType;
@@ -84,7 +84,7 @@ angular.module('mcr-ui')
         });
       } else {
         $rootScope.reportMode = false;
-        $rootScope.settingsMode = false;
+        $rootScope.wardMode = false;
         $rootScope.reportTypeSet = false;
         $rootScope.patientMode = true;
         $rootScope.subHeader = $stateParams.queryType + $stateParams.searchString;
@@ -98,10 +98,10 @@ angular.module('mcr-ui')
 //          $scope.patients = result.data.patientDetails;
           var patients = [];
 
-                  angular.forEach(result.data.patientDetails, function (patient) {
-                    patient = new Patient(patient);
-                    patients.push(patient);
-                  });
+          angular.forEach(result.data.patientDetails, function (patient) {
+            patient = new Patient(patient);
+            patients.push(patient);
+          });
 
           $scope.patients = patients;
           $scope.pagingInfo.totalItems = result.data.totalPatients;

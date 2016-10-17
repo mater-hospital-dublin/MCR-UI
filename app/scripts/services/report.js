@@ -7,7 +7,7 @@ angular.module('mcr-ui')
       return $http.post('/api/search/reports/table', searchBody);
     };
 
-    var getSettingsTable = function (searchBody) {
+    var getWardTable = function (searchBody) {
       return $http.post('/api/search/setting/table', searchBody);
     };
 
@@ -22,7 +22,7 @@ angular.module('mcr-ui')
     return {
       getChart: getChart,
       getTable: getTable,
-      getSettingsTable: getSettingsTable,
+      getWardTable: getWardTable,
       searchByPatient: searchByPatient
     };
 

@@ -107,7 +107,7 @@ angular.module('mcr-ui')
       };
 
       $scope.containsSettingString = function () {
-        return $scope.searchExpression.lastIndexOf('st ') === 0;
+        return $scope.searchExpression.lastIndexOf('wd ') === 0;
       };
 
       $scope.containsPatientString = function () {
@@ -125,7 +125,7 @@ angular.module('mcr-ui')
 
       $rootScope.searchMode = false;
       $rootScope.reportMode = false;
-      $rootScope.settingsMode = false;
+      $rootScope.wardMode = false;
       $rootScope.patientMode = false;
       $rootScope.reportTypeSet = false;
       $rootScope.reportTypeString = '';
@@ -151,7 +151,7 @@ angular.module('mcr-ui')
           $scope.reportTypes = [];
           $rootScope.searchMode = ($scope.containsReportString() || $scope.containsSettingString() || $scope.containsPatientString());
           $rootScope.reportMode = $scope.containsReportString();
-          $rootScope.settingsMode = $scope.containsSettingString();
+          $rootScope.wardMode = $scope.containsSettingString();
           $rootScope.patientMode = $scope.containsPatientString();
           if ($rootScope.reportMode) {
             if ($scope.containsReportTypeString) {
@@ -159,7 +159,7 @@ angular.module('mcr-ui')
             }
             $scope.processReportMode();
           }
-          if ($rootScope.settingsMode) {
+          if ($rootScope.wardMode) {
             $scope.processSettingMode();
           }
           if ($rootScope.patientMode) {
@@ -172,7 +172,7 @@ angular.module('mcr-ui')
         $rootScope.reportMode = false;
         $rootScope.searchMode = false;
         $rootScope.patientMode = false;
-        $rootScope.settingsMode = false;
+        $rootScope.wardMode = false;
         $scope.searchExpression = '';
         $scope.reportTypes = '';
         $rootScope.reportTypeSet = false;
@@ -195,9 +195,9 @@ angular.module('mcr-ui')
             searchString: tempExpression
           });
         }
-        if ($rootScope.settingsMode && $scope.searchExpression !== '') {
+        if ($rootScope.wardMode && $scope.searchExpression !== '') {
           $state.go('patients-list-full', {
-            queryType: 'Setting: ',
+            queryType: 'Ward: ',
             searchString: $scope.searchExpression,
             orderType: 'ASC',
             pageNumber: '1'
@@ -232,7 +232,7 @@ angular.module('mcr-ui')
       };
 
       $scope.processSettingMode = function () {
-        if ($scope.searchExpression === 'st ') {
+        if ($scope.searchExpression === 'wd ') {
           $scope.searchExpression = '';
         }
       };

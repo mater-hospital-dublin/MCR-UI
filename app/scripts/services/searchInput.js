@@ -4,16 +4,16 @@ angular.module('mcr-ui')
   .factory('SearchInput', function ($rootScope, $stateParams) {
 
     var update = function () {
-      if ($stateParams.queryType === 'Setting: ') {
+      if ($stateParams.queryType === 'Ward: ') {
         $rootScope.searchMode = true;
-        $rootScope.settingsMode = true;
+        $rootScope.wardMode = true;
         $rootScope.reportMode = false;
         $rootScope.patientMode = false;
         $rootScope.subHeader = $stateParams.queryType + $stateParams.searchString;
       } else if ($stateParams.queryType === 'Reports: ') {
         $rootScope.searchMode = true;
         $rootScope.reportMode = true;
-        $rootScope.settingsMode = false;
+        $rootScope.wardMode = false;
         $rootScope.patientMode = false;
         $rootScope.reportTypeSet = true;
         $rootScope.reportTypeString = $stateParams.reportType;
@@ -21,7 +21,7 @@ angular.module('mcr-ui')
       } else if ($stateParams.queryType === 'Patient: '){
         $rootScope.searchMode = true;
         $rootScope.reportMode = false;
-        $rootScope.settingsMode = false;
+        $rootScope.wardMode = false;
         $rootScope.reportTypeSet = false;
         $rootScope.patientMode = true;
         $rootScope.subHeader = $stateParams.queryType + $stateParams.searchString;
